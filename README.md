@@ -139,7 +139,7 @@ Unit to measure to pay for compute resources
 
 ## Tables
 
-    ![Alt text](./images/Tables.PNG)
+![Alt text](./images/Tables.PNG)
 
 
 
