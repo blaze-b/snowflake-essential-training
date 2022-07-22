@@ -51,7 +51,7 @@
     - Time Travel: Enables access to data that has been changed or deleted at any point within a defined period
     - Fail-Safe: Recovery from a catastrophic incident like storage failure, corruption or security breach, It is last resource measure
     - Continuous Data Protection: Active Data(Data is active until it is changes) -> Time Travel (Records stay here for the duration of the Time Travel period(1-90 Days)) -> Automatice Fail-Safe (Records stay here for another 7 days after Time Travel Expiration)
-2. Compute Resouces:
+2. Compute Resources:
     - Number and size of virtual warehouses
     - Serverless features: `Snowpipe`, `Background table mainternance`, `Database replication`
     - Cloud services: `Authentication and Authorization`, `Infrastructure management`, `Query parsing and optimization`
@@ -160,10 +160,27 @@ Unit to measure to pay for compute resources
         2. Enterprise edition
         3. Table-level property
 
-- Constaints:
+## Constaints:
 
     ![Alt text](./images/constraints.PNG)
-    
+
+    - Not Null is enforced
+
+## Data Types
+
+    -  ![Alt text](./images/data-types.PNG)
+
+## Views
+
+    - ![Alt text](./images/views.PNG)
+
+## Code Modules
+
+    - User Defined Functions
+    - External Functions
+    - Stored procedures
+  
+ Modules can be coded in SQL or JavaScript
 
 
 
