@@ -108,6 +108,12 @@ Unit to measure to pay for compute resources
     ![Alt text](./images/ICS.PNG)
 
 
+## Virtual Warehouse
+
+- Operations: 
+    ![Alt text](./images/Operations.PNG)
+
+- Executing DDL does not  
 
 
 
