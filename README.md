@@ -44,18 +44,18 @@
 
 ## Billing Model
 
-    1. Storage
-      - It is Flat rate per terabyte
-      - Based on Region Payment Plan
-      - Storage Charges: Data + Time Travel + Fail-Safe
-      - Time Travel: Enables access to data that has been changed or deleted at any point within a defined period
-      - Fail-Safe: Recovery from a catastrophic incident like storage failure, corruption or security breach, It is last resource measure
-      - Continuous Data Protection: Active Data(Data is active until it is changes) -> Time Travel (Records stay here for the duration of the Time Travel period(1-90 Days)) -> Automatice Fail-Safe (Records stay here for another 7 days after Time Travel Expiration)
-    2. Compute Resouces:
-      - Number and size of virtual warehouses
-      - Serverless features: `Snowpipe`, `Background table mainternance`, `Database replication`
-      - Cloud services: `Authentication and Authorization`, `Infrastructure management`, `Query parsing and optimization`
-    3. Data transfer
+1. Storage
+    - It is Flat rate per terabyte
+    - Based on Region Payment Plan
+    - Storage Charges: Data + Time Travel + Fail-Safe
+    - Time Travel: Enables access to data that has been changed or deleted at any point within a defined period
+    - Fail-Safe: Recovery from a catastrophic incident like storage failure, corruption or security breach, It is last resource measure
+    - Continuous Data Protection: Active Data(Data is active until it is changes) -> Time Travel (Records stay here for the duration of the Time Travel period(1-90 Days)) -> Automatice Fail-Safe (Records stay here for another 7 days after Time Travel Expiration)
+2. Compute Resouces:
+    - Number and size of virtual warehouses
+    - Serverless features: `Snowpipe`, `Background table mainternance`, `Database replication`
+    - Cloud services: `Authentication and Authorization`, `Infrastructure management`, `Query parsing and optimization`
+3. Data transfer
 
 ## Snowflake Credit:
 
@@ -63,30 +63,30 @@
     
 ## Snowflake Editions:
 
-    1. Standard: 
-        1. SQL data warehouse engine
-        2. Encryption in transit and at rest
-        3. All system tools available
-        4. One day of time-travel
+1. Standard: 
+    1. SQL data warehouse engine
+    2. Encryption in transit and at rest
+    3. All system tools available
+    4. One day of time-travel
     
-    2. Enterprise
-        1. Standard+
-        2. Materialized views, data masking, point-lookup optimization
-        3. Multi-Cluster warehouses
-        4. Periodic rekey of encryption
-        5. Up to 90 days of Time-Travel
+2. Enterprise
+    1. Standard+
+    2. Materialized views, data masking, point-lookup optimization
+    3. Multi-Cluster warehouses
+    4. Periodic rekey of encryption
+    5. Up to 90 days of Time-Travel
         
-    3. Business Critical
-        1. Enterprise
-        2. HIPAA and PCI support
-        3. Customer-Managed keys
-        4. AWS and Azure Private links
-        5. Disaster recovery failover and failback
+3. Business Critical
+    1. Enterprise
+    2. HIPAA and PCI support
+    3. Customer-Managed keys
+    4. AWS and Azure Private links
+    5. Disaster recovery failover and failback
     
-    4. Virtual Private Snowflake
-        1. Business Critical+
-        2. Dedicated metadata store and pool of virtual servers
-        3. Isolated environment from all other snowflake accounts
+4. Virtual Private Snowflake
+    1. Business Critical+
+    2. Dedicated metadata store and pool of virtual servers
+    3. Isolated environment from all other snowflake accounts
 
 ## Cost
 
