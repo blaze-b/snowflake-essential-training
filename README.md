@@ -141,6 +141,30 @@ Unit to measure to pay for compute resources
 
 ![Alt text](./images/Tables.PNG)
 
+- Table Storage
+    
+    ![Alt text](./images/table1.PNG)
+    
+    1. Micro Partitions:
+        1. Automatic partitioning scheme
+        2. 50MB-500MB in size
+        3. Compressed columnar storage
+        4. Pruned during query execution
+    2. Clusteting key
+        1. Tables 1TB+
+        2. Orderes the micro-partition records based on the key
+        3. Automatically maintained by Snowflake
+        4. Useful for range and equqlity predicates on the key
+    3. Search Optimization Service
+        1. Serverless feature
+        2. Enterprise edition
+        3. Table-level property
+
+- Constaints:
+
+    ![Alt text](./images/constraints.PNG)
+    
+
 
 
 
