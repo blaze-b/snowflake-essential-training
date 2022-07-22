@@ -90,7 +90,7 @@
 
 ## Cost
 
-     ![Alt text](./images/credits.PNG)
+![Alt text](./images/credits.PNG)
 
 
 
