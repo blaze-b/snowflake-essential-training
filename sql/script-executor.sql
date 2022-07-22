@@ -1,1 +1,1 @@
-SELECT get_ddl('table', 'users');
+select * from reviews.PUBLIC.top_businesses_secure;

@@ -1,9 +1,6 @@
----Tables---
-
 use database reviews;
 
-
-
+---tables--
 create or replace TABLE reviews.PUBLIC.USERS(
   USER_ID VARCHAR(100),
   NAME VARCHAR(100),
@@ -42,8 +39,8 @@ INSERT INTO reviews.PUBLIC.BUSINESSES VALUES
 
 select * from reviews.PUBLIC.BUSINESSES;
 
----Time Travel---
 
+---Time Travel---
 ALTER SESSION  SET TIMEZONE = 'UTC';
 
 select getdate(); -- Output: 2022-07-22 14:37:01.632 +0000	
@@ -57,3 +54,21 @@ SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-22 14:37:01.632
 INSERT INTO reviews.PUBLIC.BUSINESSES
 SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-22 14:37:01.632 +0000'::timestamp)
 WHERE City='Las Vegas';
+
+---views---
+CREATE OR REPLACE VIEW reviews.PUBLIC.top_businesses
+AS
+SELECT * FROM
+Businesses 
+WHERE stars>=4;
+
+select * from reviews.PUBLIC.top_businesses;
+
+---secure-view---
+CREATE OR REPLACE SECURE VIEW reviews.PUBLIC.top_businesses_secure
+AS
+SELECT * FROM
+Businesses 
+WHERE stars>=4;
+
+select * from reviews.PUBLIC.top_businesses_secure;
