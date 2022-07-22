@@ -162,25 +162,24 @@ Unit to measure to pay for compute resources
 
 ## Constaints:
 
-    ![Alt text](./images/constraints.PNG)
+![Alt text](./images/constraints.PNG)
 
-    - Not Null is enforced
+Not Null is enforced
 
 ## Data Types
 
-    -  ![Alt text](./images/data-types.PNG)
+![Alt text](./images/data-types.PNG)
 
 ## Views
 
-    - ![Alt text](./images/views.PNG)
+![Alt text](./images/views.PNG)
 
 ## Code Modules
 
-    - User Defined Functions
-    - External Functions
-    - Stored procedures
-  
- Modules can be coded in SQL or JavaScript
+- User Defined Functions
+- External Functions
+- Stored procedures
+- Modules can be coded in SQL or JavaScript
 
 
 
