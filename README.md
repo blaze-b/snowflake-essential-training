@@ -59,7 +59,7 @@
 
 ## Snowflake Credit:
 
-    Unit to measure to pay for compute resources
+Unit to measure to pay for compute resources
     
 ## Snowflake Editions:
 
@@ -91,6 +91,23 @@
 ## Cost
 
 ![Alt text](./images/credits.PNG)
+
+
+## Architecture
+
+- Massively Parallel Processing Database Engine
+    
+    ![Alt text](./images/MVP.PNG)
+
+- Decoupled Compute and Storage
+
+    ![Alt text](./images/DCS.PNG)
+
+- Tight integration with cloud storage
+
+    ![Alt text](./images/ICS.PNG)
+
+
 
 
 
