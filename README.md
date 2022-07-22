@@ -124,13 +124,17 @@ Unit to measure to pay for compute resources
 
 - Size 
     
-    ![Alt text](./images/VM_SIZES.PNGs)
+    ![Alt text](./images/VM_SIZES.PNG)
 
 - The actual monetary cost of a credit depends on the edition of your account
 
 - Multiple Virtual Warehouses
 
     ![Alt text](./images/MCM.PNG)
+
+- Multi-Cluster Warehouses
+
+    ![Alt text](./images/MCW.PNG)
 
 
 
