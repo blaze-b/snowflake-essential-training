@@ -111,9 +111,27 @@ Unit to measure to pay for compute resources
 ## Virtual Warehouse
 
 - Operations: 
+
     ![Alt text](./images/Operations.PNG)
 
-- Executing DDL does not  
+- Executing DDL does not always require an active Virtual Warehouse
+
+- It has procedure for the automatic operations
+
+- It provides the Flexibility and Elasticity
+
+    ![Alt text](./images/VW.PNG)
+
+- Size 
+    
+    ![Alt text](./images/VM_SIZES.PNGs)
+
+- The actual monetary cost of a credit depends on the edition of your account
+
+- Multiple Virtual Warehouses
+
+    ![Alt text](./images/MCM.PNG)
+
 
 
 
