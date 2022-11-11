@@ -43,16 +43,16 @@ select * from reviews.PUBLIC.BUSINESSES;
 ---Time Travel---
 ALTER SESSION  SET TIMEZONE = 'UTC';
 
-select getdate(); -- Output: 2022-07-22 14:37:01.632 +0000	
+select getdate(); -- Output: 2022-07-25 07:34:17.620 +0000	
 
 DELETE FROM reviews.PUBLIC.BUSINESSES WHERE City='Las Vegas';
 
 SELECT * from reviews.PUBLIC.BUSINESSES WHERE City='Las Vegas'
 
-SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-22 14:37:01.632 +0000'::timestamp) WHERE City='Las Vegas';
+SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-25 07:34:17.620 +0000'::timestamp) WHERE City='Las Vegas';
 
 INSERT INTO reviews.PUBLIC.BUSINESSES
-SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-22 14:37:01.632 +0000'::timestamp)
+SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-25 07:34:17.620 +0000'::timestamp)
 WHERE City='Las Vegas';
 
 ---views---
@@ -72,3 +72,7 @@ Businesses
 WHERE stars>=4;
 
 select * from reviews.PUBLIC.top_businesses_secure;
+
+
+SELECT * FROM top_businesses
+WHERE 1/iff(city='Cleveland', 0, 1) = 1;
