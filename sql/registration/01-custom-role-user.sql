@@ -13,7 +13,7 @@ revoke ALL on account from role "<SUPER_ROLE>";
 
 -- Script to grant access from the account level
 grant MANAGE GRANTS, CREATE USER, CREATE ROLE, CREATE INTEGRATION, CREATE DATABASE on account to role "<SUPER_ROLE>";
-grant MONITOR USAG on account to role "<SUPER_ROLE>";
+grant MONITOR USAGE on account to role "<SUPER_ROLE>";
 revoke MONITOR USAGE on account from role "<SUPER_ROLE>";
 show grants to role "<SUPER_ROLE>";
 
