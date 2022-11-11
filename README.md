@@ -45,12 +45,12 @@
 ## Billing Model
 
 1. Storage
-    - It is Flat rate per terabyte
-    - Based on Region Payment Plan
-    - Storage Charges: Data + Time Travel + Fail-Safe
-    - Time Travel: Enables access to data that has been changed or deleted at any point within a defined period
-    - Fail-Safe: Recovery from a catastrophic incident like storage failure, corruption or security breach, It is last resource measure
-    - Continuous Data Protection: Active Data(Data is active until it is changes) -> Time Travel (Records stay here for the duration of the Time Travel period(1-90 Days)) -> Automatice Fail-Safe (Records stay here for another 7 days after Time Travel Expiration)
+    - It is `Flat rate per terabyte`
+    - Based on `Region Payment Plan`
+    - Storage Charges: `Data + Time Travel + Fail-Safe`
+        - Time Travel: Enables access to data that has been changed or deleted at any point within a defined period
+        - Fail-Safe: Recovery from a catastrophic incident like storage failure, corruption or security breach, It is last resource measure
+        - Continuous Data Protection: Active Data(Data is active until it is changes) -> Time Travel (Records stay here for the duration of the Time Travel period(1-90 Days)) -> Automatice Fail-Safe (Records stay here for another 7 days after Time Travel Expiration)
 2. Compute Resources:
     - Number and size of virtual warehouses
     - Serverless features: `Snowpipe`, `Background table mainternance`, `Database replication`
