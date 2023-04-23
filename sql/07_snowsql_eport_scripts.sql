@@ -1,0 +1,1 @@
+snowsql -f snowsql\SQL_QUERY.txt -o output_file=snowsql\output.csv -o quiet=true -o friendly=false -o header=false -o output_format=csv
