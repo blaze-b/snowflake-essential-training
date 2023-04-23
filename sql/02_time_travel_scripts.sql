@@ -1,3 +1,7 @@
+use DATABASE reviews;
+
+use WAREHOUSE dataload;
+
 -- Select Script
 SELECT * FROM reviews.PUBLIC.BUSINESSES;
 

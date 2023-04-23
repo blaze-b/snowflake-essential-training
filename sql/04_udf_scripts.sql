@@ -1,3 +1,5 @@
+-- User defined functions
+
 CREATE OR REPLACE FUNCTION cityAverageStars(city varchar)
 RETURNS number
 AS
@@ -9,7 +11,6 @@ GROUP BY b.CITY
 $$;
 
 SELECT cityAverageStars('Las Vegas');
-
 
 CREATE OR REPLACE FUNCTION cityReputation(city varchar)
 RETURNS TABLE(City varchar,ReviewCount number, AverageStars number)
