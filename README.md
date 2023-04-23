@@ -185,7 +185,7 @@ Not Null is enforced
 ## SnowSQL download
 
 - Installation: https://docs.snowflake.com/en/user-guide/snowsql-install-config
-- Run command: `snowsql -a <account-name> -u <login-name>
+- Run command: `snowsql -a <account-name> -u <login-name>`
 - Add the account-name, username and passord in the ./snowsql/config file
   
    ![Alt text](./images/snowsql-config.JPG)
