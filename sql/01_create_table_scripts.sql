@@ -1,6 +1,21 @@
+---Script to create the database in the snowflake---
+create database reviews;
+
+---SHOW Scripts---
+show databases;
+show schemas;
+show views;
+
+---Warehouse Creating Script---
+CREATE WAREHOUSE DATALOAD WITH WAREHOUSE_SIZE = 'XSMALL' WAREHOUSE_TYPE = 'STANDARD' AUTO_SUSPEND = 600 AUTO_RESUME = TRUE COMMENT = 'DATA LOADING WAREHOUSE PURPOSE';
+
+---Suspend a Warehouse---
+ALTER WAREHOUSE "DATALOAD" SUSPEND;
+
+-- Script to switch to the database
 use database reviews;
 
----tables--
+---create tables--
 create or replace TABLE reviews.PUBLIC.USERS(
   USER_ID VARCHAR(100),
   NAME VARCHAR(100),
@@ -20,7 +35,7 @@ create or replace TABLE reviews.PUBLIC.BUSINESSES (
     STARS NUMBER(38,4)
 );
 
-
+-- Insert scripts
 INSERT INTO reviews.PUBLIC.BUSINESSES VALUES
 ('QNcv3mwnHJ5w4YB4giqkWw','Preferred Veterinary Care','Pittsburgh','PA',4,3.5),
 ('oZG8sxDL54ki9pmDfyL7rA','Not My Dog','Toronto','ON',9,3.5),
@@ -36,43 +51,3 @@ INSERT INTO reviews.PUBLIC.BUSINESSES VALUES
 ('AMxxi7jyxhcdNF7FIRbUVA','Remington''s Restaurant','Scottsdale','AZ',103,3.0),
 ('d01d-w7pxHrMCX5mDwaaHQ','D Liche','Montréal','QC',89,4.5),
 ('66DKb6APF96InEKrUVIbZw','Allo Inde','Montréal','QC',3,3.5);
-
-select * from reviews.PUBLIC.BUSINESSES;
-
-
----Time Travel---
-ALTER SESSION  SET TIMEZONE = 'UTC';
-
-select getdate(); -- Output: 2022-07-25 07:34:17.620 +0000	
-
-DELETE FROM reviews.PUBLIC.BUSINESSES WHERE City='Las Vegas';
-
-SELECT * from reviews.PUBLIC.BUSINESSES WHERE City='Las Vegas'
-
-SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-25 07:34:17.620 +0000'::timestamp) WHERE City='Las Vegas';
-
-INSERT INTO reviews.PUBLIC.BUSINESSES
-SELECT * from reviews.PUBLIC.BUSINESSES at(timestamp => '2022-07-25 07:34:17.620 +0000'::timestamp)
-WHERE City='Las Vegas';
-
----views---
-CREATE OR REPLACE VIEW reviews.PUBLIC.top_businesses
-AS
-SELECT * FROM
-Businesses 
-WHERE stars>=4;
-
-select * from reviews.PUBLIC.top_businesses;
-
----secure-view---
-CREATE OR REPLACE SECURE VIEW reviews.PUBLIC.top_businesses_secure
-AS
-SELECT * FROM
-Businesses 
-WHERE stars>=4;
-
-select * from reviews.PUBLIC.top_businesses_secure;
-
-
-SELECT * FROM top_businesses
-WHERE 1/iff(city='Cleveland', 0, 1) = 1;

@@ -8,18 +8,18 @@ CREATE ROLE "<SUPER_ROLE>" COMMENT = 'DEFAULT SUPER ROLE';
 GRANT ROLE "<SUPER_ROLE>" TO ROLE "SYSADMIN";
 
 -- Script to grant all the roles
-grant ALL on account to role "<SUPER_ROLE>";
-revoke ALL on account from role "<SUPER_ROLE>";
+GRANT ALL on account to role "<SUPER_ROLE>";
+REVOKE ALL on account from role "<SUPER_ROLE>";
 
 -- Script to grant access from the account level
-grant MANAGE GRANTS, CREATE USER, CREATE ROLE, CREATE INTEGRATION, CREATE DATABASE on account to role "<SUPER_ROLE>";
-grant MONITOR USAGE on account to role "<SUPER_ROLE>";
-revoke MONITOR USAGE on account from role "<SUPER_ROLE>";
-show grants to role "<SUPER_ROLE>";
+GRANT MANAGE GRANTS, CREATE USER, CREATE ROLE, CREATE INTEGRATION, CREATE DATABASE on account to role "<SUPER_ROLE>";
+GRANT MONITOR USAGE on account to role "<SUPER_ROLE>";
+REVOKE MONITOR USAGE on account from role "<SUPER_ROLE>";
+SHOW grants to role "<SUPER_ROLE>";
 
 -- Script to grant imported privileges
-grant imported privileges on database snowflake to role "<SUPER_ROLE>";
-revoke imported privileges on database snowflake from role "<SUPER_ROLE>";
+GRANT imported privileges on database snowflake to role "<SUPER_ROLE>";
+REVOKE imported privileges on database snowflake from role "<SUPER_ROLE>";
 
 -- Scrip to create a custome warehouse
 CREATE WAREHOUSE "<CUSTOM_WAREHOUSE>" WITH WAREHOUSE_SIZE = 'XSMALL'
@@ -33,3 +33,54 @@ PASSWORD = '@@@@@@@@@@@@@@'
 COMMENT = 'Second User' LOGIN_NAME = 'USER2' DISPLAY_NAME = 'USER2' FIRST_NAME = 'USER2' LAST_NAME = 'USER2' 
 EMAIL = '<email-id>' DEFAULT_ROLE = "<SUPER_ROLE>" MUST_CHANGE_PASSWORD = FALSE;
 GRANT ROLE "<SUPER_ROLE>" TO USER "user-2";
+
+-- Script to create the role
+CREATE ROLE "<database-name>";
+
+-- Script to create the user
+CREATE USER "<database-name>" PASSWORD = '<password>' 
+LOGIN_NAME='<database-name>' DISPLAY_NAME = '<database-name>' FIRST_NAME = 'S3Snowflake' 
+LAST_NAME = 'Tester' 
+EMAIL= 's3snowflake.tester@domain.com' MUST_CHANGE_PASSWORD=FALSE DEFAULT_ROLE="<database-name>"; 
+
+GRANT ROLE "<database-name>" TO USER "<database-name>";
+GRANT ROLE "<database-name>" TO ROLE "<role-name>";
+
+-- Script to create the database
+CREATE DATABASE "<database-name>";
+
+GRANT ALL PRIVILEGES ON DATABASE "<database-name>"  TO ROLE "<database-name>";
+GRANT ALL PRIVILEGES ON ALL SCHEMAS IN DATABASE "<database-name>" TO ROLE "<database-name>";
+GRANT ALL PRIVILEGES ON FUTURE TABLES IN DATABASE "<database-name>" TO ROLE "<database-name>";
+GRANT USAGE ON WAREHOUSE "<role-name>" TO ROLE "<database-name>" WITH GRANT OPTION;
+
+-- Script to create the file format
+CREATE OR REPLACE FILE FORMAT "<database-name>"."PUBLIC"."PARQUET_FORMAT" TYPE = 'parquet' COMPRESSION = 'AUTO' 
+COMMENT = '#' BINARY_AS_TEXT = TRUE;
+
+CREATE OR REPLACE FILE FORMAT "<database-name>"."PUBLIC"."JSON_FORMAT" TYPE = 'json' COMMENT = '#';
+
+CREATE OR REPLACE FILE FORMAT "<database-name>"."PUBLIC"."CSV_COMMA_FORMAT" TYPE = 'csv' 
+COMPRESSION = 'AUTO' FIELD_DELIMITER = ',' RECORD_DELIMITER = '\n' COMMENT = '#' SKIP_HEADER = 0 
+FIELD_OPTIONALLY_ENCLOSED_BY = 'NONE' TRIM_SPACE = FALSE ERROR_ON_COLUMN_COUNT_MISMATCH = TRUE ESCAPE = 'NONE' 
+ESCAPE_UNENCLOSED_FIELD = '\134' DATE_FORMAT = 'AUTO' TIMESTAMP_FORMAT = 'AUTO' NULL_IF = ('\\N');
+
+CREATE OR REPLACE FILE FORMAT "<database-name>"."PUBLIC"."CSV_TAB_FORMAT" TYPE = 'csv' 
+COMPRESSION = 'AUTO' FIELD_DELIMITER = '\t' RECORD_DELIMITER = '\n' COMMENT = '#' SKIP_HEADER = 0 
+FIELD_OPTIONALLY_ENCLOSED_BY = 'NONE' TRIM_SPACE = FALSE ERROR_ON_COLUMN_COUNT_MISMATCH = TRUE ESCAPE = 'NONE' 
+ESCAPE_UNENCLOSED_FIELD = '\134' 
+DATE_FORMAT = 'AUTO' TIMESTAMP_FORMAT = 'AUTO' NULL_IF = ('\\N');
+
+CREATE OR REPLACE FILE FORMAT "<database-name>"."PUBLIC"."CSV_PIPE_FORMAT" TYPE = 'csv' 
+COMPRESSION = 'AUTO' FIELD_DELIMITER = '|' RECORD_DELIMITER = '\n' COMMENT = '#' SKIP_HEADER = 0 
+FIELD_OPTIONALLY_ENCLOSED_BY = 'NONE' TRIM_SPACE = FALSE ERROR_ON_COLUMN_COUNT_MISMATCH = TRUE ESCAPE = 'NONE'
+ESCAPE_UNENCLOSED_FIELD = '\134' DATE_FORMAT = 'AUTO' TIMESTAMP_FORMAT = 'AUTO' NULL_IF = ('\\N');
+
+GRANT USAGE ON FILE FORMAT "<database-name>"."PUBLIC"."PARQUET_FORMAT" TO ROLE "<database-name>" WITH GRANT OPTION;
+GRANT USAGE ON FILE FORMAT "<database-name>"."PUBLIC"."CSV_COMMA_FORMAT" TO ROLE "<database-name>" WITH GRANT OPTION;
+GRANT USAGE ON FILE FORMAT "<database-name>"."PUBLIC"."CSV_TAB_FORMAT" TO ROLE "<database-name>" WITH GRANT OPTION;
+GRANT USAGE ON FILE FORMAT "<database-name>"."PUBLIC"."CSV_PIPE_FORMAT" TO ROLE "<database-name>" WITH GRANT OPTION;
+
+ALTER DATABASE "<database-name>" SET DATA_RETENTION_TIME_IN_DAYS = 0 MAX_DATA_EXTENSION_TIME_IN_DAYS = 90;
+ALTER USER "<database-name>" SET 
+rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAimeP3EaLMrPUS6bunuAhVOFYVrqWKYuTAucr0oJ26K6Bwv417e1Kn7ZzoQfJRkFRRLmQS/A1BHzQcaJaWjrQPh1/173ntlbL6lIkSjGkBpd3hdS1a00dCd+glWlxjeSJ2k+eHXnYrQt9YX7RIPX3E0wcKBOwuKOsK4Vb0HJH9XgiW0TOChZLEVEHwBDPA/rgg5PI7ft7bEK3iVtAgSwp0LobOlOzbADPHBcL/9FQYC7oXOKh2bGRstQtVUtnQoMP5isN6PSBTKs1AwH8wWZhcQku9QgYqZi6d3WKUsVNcTUtU4HA7DYtqezZoWUgorGdZimqgZRpZvLNrcvPiNsqqQIDAQAB';
