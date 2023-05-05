@@ -192,8 +192,30 @@ Not Null is enforced
 
 - Run: `snowsql`
 
+## File Formats
+
+- Supported file formats
+
+    ![Alt text](./images/file_formats.JPG)
+
+- Options:
+   
+    ![Alt text](./images/file_options.JPG)
+
+- Best Practices
+  - Loading virtual warehouses
+  - 10 to 100 MB compressed
+  - Aggregate or split data to get this range
+  - Seperate the files by folders with source and date information
+  
+## Import data
+
+ - Web portal
+ - Copy command
+ - Snowpipe
 
 
+## Importing data from the webportal
 
 
 
