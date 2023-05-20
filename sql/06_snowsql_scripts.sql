@@ -1,8 +1,8 @@
--- Run the scripts in the SOWSQL command line
+-- Run the scripts in the SNOWSQL command line
 use Reviews;
 select * from businesses limit 5;
 
-!source snowsql\CREATE TABLE SNOWSQL.txt
+!source snowsql\CREATE_TABLE_SNOWSQL.txt
 !define cityName='Las Vegas'
 !set variable_substitution=true
 select * from top_businesses where city='&cityName';

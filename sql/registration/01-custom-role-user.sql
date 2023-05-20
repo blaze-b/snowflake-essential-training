@@ -1,7 +1,7 @@
-show grants to role "ACCOUNTADMIN";
-show grants to role "SECURITYADMIN";
-show grants to role "USERADMIN";
-show grants to role "SYSADMIN";
+SHOW GRANTS TO role "ACCOUNTADMIN";
+SHOW GRANTS TO role "SECURITYADMIN";
+SHOW GRANTS TO role "USERADMIN";
+SHOW GRANTS TO role "SYSADMIN";
 
 -- Create a custom role from sysadmin role
 CREATE ROLE "<SUPER_ROLE>" COMMENT = 'DEFAULT SUPER ROLE';
@@ -22,9 +22,8 @@ GRANT imported privileges on database snowflake to role "<SUPER_ROLE>";
 REVOKE imported privileges on database snowflake from role "<SUPER_ROLE>";
 
 -- Scrip to create a custome warehouse
-CREATE WAREHOUSE "<CUSTOM_WAREHOUSE>" WITH WAREHOUSE_SIZE = 'XSMALL'
-WAREHOUSE_TYPE = 'STANDARD' AUTO_SUSPEND = 600 AUTO_RESUME = TRUE 
-COMMENT = 'Custom warehouse';
+CREATE WAREHOUSE "<CUSTOM_WAREHOUSE>" 
+WITH WAREHOUSE_SIZE = 'XSMALL'WAREHOUSE_TYPE = 'STANDARD' AUTO_SUSPEND = 600 AUTO_RESUME = TRUE COMMENT = 'Custom warehouse';
 GRANT MODIFY, MONITOR, OPERATE, USAGE ON WAREHOUSE "<CUSTOM_WAREHOUSE>" TO ROLE "<SUPER_ROLE>" WITH GRANT OPTION;
 
 -- Script to create a user for all the ownership access

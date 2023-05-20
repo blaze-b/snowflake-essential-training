@@ -1,10 +1,10 @@
 ---Script to create the database in the snowflake---
-create database reviews;
+CREATE DATABASE reviews;
 
 ---SHOW Scripts---
-show databases;
-show schemas;
-show views;
+SHOW DATABASES;
+SHOW SCHEMAS;
+SHOW VIEWS;
 
 ---Warehouse Creating Script---
 CREATE WAREHOUSE DATALOAD WITH WAREHOUSE_SIZE = 'XSMALL' WAREHOUSE_TYPE = 'STANDARD' AUTO_SUSPEND = 600 AUTO_RESUME = TRUE COMMENT = 'DATA LOADING WAREHOUSE PURPOSE';
@@ -13,10 +13,10 @@ CREATE WAREHOUSE DATALOAD WITH WAREHOUSE_SIZE = 'XSMALL' WAREHOUSE_TYPE = 'STAND
 ALTER WAREHOUSE "DATALOAD" SUSPEND;
 
 -- Script to switch to the database
-use database reviews;
+USE DATABASE reviews;
 
 ---create tables--
-create or replace TABLE reviews.PUBLIC.USERS(
+CREATE OR REPLACE TABLE reviews.PUBLIC.USERS(
   USER_ID VARCHAR(100),
   NAME VARCHAR(100),
   REVIEW_COUNT NUMBER(38,4),
@@ -26,7 +26,7 @@ create or replace TABLE reviews.PUBLIC.USERS(
   JOINED_DATE DATE
 );
 
-create or replace TABLE reviews.PUBLIC.BUSINESSES (
+CREATE OR REPLACE TABLE reviews.PUBLIC.BUSINESSES (
     BUSINESS_ID VARCHAR(100),
     NAME VARCHAR(100),
     CITY VARCHAR(50),

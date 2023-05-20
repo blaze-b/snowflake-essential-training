@@ -202,6 +202,7 @@ Not Null is enforced
    
     ![Alt text](./images/file_options.JPG)
 
+
 - Best Practices
   - Loading virtual warehouses
   - 10 to 100 MB compressed
@@ -217,6 +218,5 @@ Not Null is enforced
 
 ## Importing data from the webportal
 
-
-
+- Loading data
 
