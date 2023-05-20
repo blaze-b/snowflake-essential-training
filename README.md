@@ -198,6 +198,7 @@ Not Null is enforced
 
     ![Alt text](./images/file_formats.JPG)
 
+
 - Options:
    
     ![Alt text](./images/file_options.JPG)
@@ -215,8 +216,14 @@ Not Null is enforced
  - Copy command
  - Snowpipe
 
+## Import data through the load button
 
-## Importing data from the webportal
+## Data Stage
 
-- Loading data
-
+ - It is used for loading data from files into Snowflake tables and unloading data into files
+ - Types: Internal: Storaged and managed by snowflake, External: s3, azure, gcp storage
+ - Internal Stages: User Stage, Table Stage, Named Stage
+ 
+ - Import Process
+    
+    ![Alt text](./images/import_process.JPG)
