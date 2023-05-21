@@ -224,7 +224,7 @@ Not Null is enforced
  - Types: Internal: Storaged and managed by snowflake, External: s3, azure, gcp storage
  - Internal Stages: User Stage, Table Stage, Named Stage \\n
     
-    [Copy-Stage-Scripts](./sql/08_copy_stage_scripts.sql)
+    [Scripts](./sql/08_copy_stage_scripts.sql)
 
  - Import Process
     
@@ -237,3 +237,5 @@ Not Null is enforced
  - Severless feature
  - Same file best practices
  - Recommended 1 minute cadence
+ - [Script](./sql/09_snowpipe_scripts.sql)
+
