@@ -223,6 +223,7 @@ Not Null is enforced
  - It is used for loading data from files into Snowflake tables and unloading data into files
  - Types: Internal: Storaged and managed by snowflake, External: s3, azure, gcp storage
  - Internal Stages: User Stage, Table Stage, Named Stage
+    
     [Copy-Stage-Scripts](./sql/08_copy_stage_scripts.sql)
  - Import Process
     
