@@ -244,6 +244,36 @@ Not Null is enforced
 
     ![Alt text](./images/export_process.JPG)
 
+
+## Security Model
+
+ - Access Control
+  
+  ![Alt text](./images/access_control.JPG)
+
+
+ - Users can temporarily assume the permissions of any of their roles when necessary.
+
+ - Role activation can be done through USE ROLE Command and Web Portal
+
+ - Built-In Roles: ACCOUNTADMIN, SECURITYADMIN, SYSADMIN, USERADMI, PUBLIC<AUTO>
+
+ - Securables,
+
+ ![Alt text](./images/securables.JPG)
+
+ - Securbles: Virtual Warehouses, Users, Integrations
+
+ - [Scripts](./sql/11_user_role_scripts.sql)
+
+
+## [Sample Query](./sql/12_querying_scripts.sql)
+
+## [Monitoring](./sql/13_monitoring_scripts.sql)
+
+
+
+
  
 
 
