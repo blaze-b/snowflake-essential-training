@@ -228,4 +228,4 @@ Not Null is enforced
     
     ![Alt text](./images/import_process.JPG)
 
- - [Copy-Stage-Scripts](./sql/01_create_table_scripts.sql)
+ - [Copy-Stage-Scripts](./sql/08_copy_stage_scripts.sql)
