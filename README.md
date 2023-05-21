@@ -267,9 +267,11 @@ Not Null is enforced
  - [Scripts](./sql/11_user_role_scripts.sql)
 
 
-## [Sample Query](./sql/12_querying_scripts.sql)
+## [Sample Query Scripting](./sql/12_querying_scripts.sql)
 
 ## [Monitoring](./sql/13_monitoring_scripts.sql)
+
+ - Monitoring involves virtual warehouse and query usages.
 
 
 
