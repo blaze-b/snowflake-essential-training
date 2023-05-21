@@ -240,13 +240,13 @@ Not Null is enforced
 
  ## Exporting data from snowflake
 
- - Export Process
+ - Export Process [Script](./sql/10_export_scripts.sql)
 
     ![Alt text](./images/export_process.JPG)
 
  
 
- 
+
 
 
 
