@@ -5,6 +5,13 @@
 - No access to the underlying OS or hardware
 - No need for ongoing component adminstration
 - Cloud: AWS, Azure, GCP
+- Service
+  - Storage seperated from compute
+  - Multiple compute clusters("Virtual Warehouses")
+  - Virtual warehouses concurrently access data without connection
+  - Centralized management
+  - Metadata seperate from storage and compute
+  - Full transactional consistency across entire system.
 
 ## Platform
 
@@ -41,6 +48,8 @@
     2. tableau
     3. salesforce
     4. looker
+
+ ![Alt text](./images/snowflake_ecosystem.JPG)
 
 ## Billing Model
 
