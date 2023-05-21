@@ -227,3 +227,5 @@ Not Null is enforced
  - Import Process
     
     ![Alt text](./images/import_process.JPG)
+
+ - [Copy-Stage-Scripts](./sql/01_create_table_scripts.sql)
