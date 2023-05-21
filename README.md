@@ -229,3 +229,11 @@ Not Null is enforced
  - Import Process
     
     ![Alt text](./images/import_process.JPG)
+
+
+## Snowpipe
+
+ - Continuous data loading
+ - Severless feature
+ - Same file best practices
+ - Recommended 1 minute cadence
