@@ -30,7 +30,8 @@ put file://snowsql\users.csv @%users/staged;
 list @%users;
 
 -- Adding to the named stage
-CREATE OR REPLACE STAGE shared_stage file_format = (TYPE = 'CSV' FIELD_DELIMITER = ',' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY='"');
+CREATE OR REPLACE STAGE shared_stage file_format = (TYPE = 'CSV' FIELD_DELIMITER = ',' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY='"')
+directory = (enable = true); 
 
 show stages;
 
