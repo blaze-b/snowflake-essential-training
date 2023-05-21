@@ -15,8 +15,7 @@ CREATE OR REPLACE TABLE USERS(
 
 show tables;
 
--- Automatice gz conversion of the file occurs
-
+-- Automatic gz conversion of the file occur
 -- Adding to the users stage
 put file://snowsql\users.csv @~/staged;
 

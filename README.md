@@ -218,24 +218,35 @@ Not Null is enforced
 
 ## Import data through the load button
 
-## Data Stage
+### Data Stage
 
  - It is used for loading data from files into Snowflake tables and unloading data into files
  - Types: Internal: Storaged and managed by snowflake, External: s3, azure, gcp storage
- - Internal Stages: User Stage, Table Stage, Named Stage \\n
-    
-    [Scripts](./sql/08_copy_stage_scripts.sql)
-
+ - Internal Stages: User Stage, Table Stage, Named Stage   
+ - [Scripts](./sql/08_copy_stage_scripts.sql)
  - Import Process
     
     ![Alt text](./images/import_process.JPG)
 
 
-## Snowpipe
+### Snowpipe
 
  - Continuous data loading
  - Severless feature
  - Same file best practices
  - Recommended 1 minute cadence
  - [Script](./sql/09_snowpipe_scripts.sql)
+
+
+ ## Exporting data from snowflake
+
+ - Export Process
+
+    ![Alt text](./images/export_process.JPG)
+
+ 
+
+ 
+
+
 
