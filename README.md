@@ -1,6 +1,6 @@
 # SNOWFLAKE
 
-- Snowflake is `fully managed` cloud data platform
+- Snowflake is a `fully managed` cloud data platform
 - It is deployed by the vendor 
 - No access to the underlying OS or hardware
 - No need for ongoing component adminstration
